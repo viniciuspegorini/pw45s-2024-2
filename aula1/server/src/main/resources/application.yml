@@ -19,7 +19,8 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-
+  flyway:
+    baseline-on-migrate: true
 ---
 spring:
   config:
@@ -33,6 +34,8 @@ spring:
   h2:
     console:
       enabled: false
+  flyway:
+    locations: classpath:/db/prod
 ---
 spring:
   config:
@@ -43,6 +46,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+  flyway:
+    locations: classpath:/db/dev
 ---
 spring:
   config:
@@ -51,4 +56,5 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-
+  flyway:
+    locations: classpath:/db/test
