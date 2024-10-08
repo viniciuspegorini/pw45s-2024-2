@@ -16,6 +16,10 @@ spring:
       hibernate:
         format_sql: false
     show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
 ---
 spring:
   config:
