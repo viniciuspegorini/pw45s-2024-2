@@ -54,6 +54,10 @@ public class WebSecurity {
                 .requestMatchers(antMatcher("/h2-console/**")).permitAll()
                 .requestMatchers(antMatcher("/error/**")).permitAll()
 
+                .requestMatchers(antMatcher("/v3/**")).permitAll()
+                .requestMatchers(antMatcher("/api-docs/**")).permitAll()
+                .requestMatchers(antMatcher("/swagger-ui/**")).permitAll()
+
                 .anyRequest().authenticated()
         );
         http.authenticationManager(authenticationManager)
