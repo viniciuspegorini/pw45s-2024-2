@@ -10,6 +10,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("users")
+@Slf4j
 public class UserController {
     private final UserService userService;
 
@@ -19,7 +20,9 @@ public class UserController {
 
     @PostMapping
     GenericResponse createUser(@RequestBody @Valid User user) {
+        log.info("Creating user: {}", user);
         userService.save(user);
+        log.info("User created with id: {}", user.getId());
 
         return new GenericResponse("Registro salvo");
     }
