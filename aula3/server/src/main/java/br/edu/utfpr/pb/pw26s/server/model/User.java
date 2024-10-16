@@ -40,11 +40,22 @@ public class User implements UserDetails {
     @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$")
     private String password;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable( name = "tb_user_authorities",
+        joinColumns = @JoinColumn(
+                name = "user_id", referencedColumnName = "id"
+            ),
+        inverseJoinColumns = @JoinColumn(
+                    name = "authority_id", referencedColumnName = "id"
+            )
+    )
+    private Set<Authority> userAuthorities;
+
     @Override
     @Transient
     @JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return AuthorityUtils.createAuthorityList("ROLE_USER");
+        return new ArrayList<>(userAuthorities);
     }
 
     @Override

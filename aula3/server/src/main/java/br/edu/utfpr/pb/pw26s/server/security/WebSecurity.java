@@ -54,6 +54,10 @@ public class WebSecurity {
                 .requestMatchers(antMatcher("/error/**")).permitAll()
                 .requestMatchers(antMatcher("/actuator/**")).permitAll()
 
+                .requestMatchers(antMatcher(HttpMethod.DELETE, "/products/**")).hasAnyRole("ADMIN")
+                .requestMatchers(antMatcher(HttpMethod.POST, "/products/**")).hasAnyRole("ADMIN", "PROFESSOR")
+
+                .requestMatchers(antMatcher("/categories/**")).hasAnyRole("ADMIN", "USER")
 
                 .anyRequest().authenticated()
         );
