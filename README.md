@@ -99,6 +99,8 @@
 
 
 3. O aluno deverá apresentar o trabalho e mostrar a aplicação/código-fonte da mesma (entre 15 e 30 minutos).
+
+4. Datas das apresentações: 11/11/2024 e 12/11/2024
 	
 ## 2 - Projeto em conjunto com a disciplina de Oficina (OD26S):
 	- Participação no desenvolvimento do *back-end* da aplicação
