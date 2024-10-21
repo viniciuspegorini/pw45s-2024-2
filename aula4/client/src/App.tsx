@@ -13,6 +13,11 @@ import { ProductFormPageV2 } from "./pages/ProductFormPageV2";
 import { NotFound } from "./pages/NotFound";
 import { Unauthorized } from "./pages/Unauthorized";
 
+const ROLES = {
+  'User': 'ROLE_USER',
+  'Admin': 'ROLE_ADMIN'
+}
+
 export function App() {
   return (
     <Routes>
@@ -23,7 +28,7 @@ export function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
 
         {/* protected routes - Roles: User and Admin */}
-        <Route element={<RequireAuth />}>
+        <Route element={<RequireAuth allowedRoles={[ROLES.Admin, ROLES.User]} />}>
           <Route path="/home" element={<HomePage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/categories" element={<CategoryListPage />} />
@@ -35,7 +40,7 @@ export function App() {
         </Route>
 
         {/* protected routes - Role: Admin */}
-        <Route element={<RequireAuth />}>
+        <Route element={<RequireAuth allowedRoles={[ROLES.Admin]}/>}>
           <Route path="/product-v2" element={<ProductListPageV2 />} />
           <Route path="/product-v2/new" element={<ProductFormPageV2 />} />
           <Route path="/product-v2/:id" element={<ProductFormPageV2 />} />
