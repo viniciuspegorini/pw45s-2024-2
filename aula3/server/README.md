@@ -109,6 +109,7 @@ O primeiro passo será permitir o acesso aos dados de permissões criando o **Au
 ```java
 package br.edu.utfpr.pb.pw26s.server.repository;
 
+import model.br.edu.utfpr.pb.pw45s.server.Authority;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AuthorityRepository extends JpaRepository<Authority, Long> {
@@ -121,8 +122,9 @@ Agora já é possível acessar as permissões do banco de dados e associá-la um
 ```java
 package br.edu.utfpr.pb.pw26s.server.service;
 
-import br.edu.utfpr.pb.pw26s.server.model.User;
-import br.edu.utfpr.pb.pw26s.server.repository.UserRepository;
+import model.br.edu.utfpr.pb.pw45s.server.User;
+import repository.br.edu.utfpr.pb.pw45s.server.AuthorityRepository;
+import repository.br.edu.utfpr.pb.pw45s.server.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 

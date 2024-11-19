@@ -76,12 +76,11 @@
 - PEDRO VICTOR FERREIRA ANDREOLI - Laravel
 - VINICIUS FLYSSAK, DAVID IRUAN MARTINELLO DOS SANTOS - Angular
 - BRUNO HENRIQUE LEAO RUARO, RENAN GUSTAVO CEZAROTTO DE MATOS - Quarkus
-- GEOVANE DE CAMPOS SOARES - .NET
+- GEOVANE DE CAMPOS SOARES, RODRIGO IZIDORO PADILHA - .NET
 - GUSTAVO HENRIQUE DE BARROS MESTRE, ANA FLAVIA PERIN - Django
 - JOAO GABRIEL JARUTAIS, VITOR LUIZ MARCANTE - Node.js
 - LUIZ ALBERTO DOS PASSOS - FastAPI
 - MARCOS FELIPE ALTENHOFEN - Flutter
-- RODRIGO IZIDORO PADILHA - ???
 
 1. [Deverá ser entregue] Desenvolver uma apresentação (PPT, PDF ou Readme.MD no git) contendo uma breve apresentação do *framework*/biblioteca escolhida:
 - As vantagens e desvantagens da linguagem, *framework* e/ou plataforma. 

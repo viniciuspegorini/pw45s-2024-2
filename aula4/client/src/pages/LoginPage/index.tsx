@@ -16,6 +16,7 @@ export function LoginPage() {
   const navigate = useNavigate();
   const [disableSubmit, setDisableSubmit] = useState(true);
 
+
   useEffect(() => {
     if (authenticated) {
       navigate("/");
@@ -59,7 +60,7 @@ export function LoginPage() {
           <h1 className="h3 mb-3 fw-normal">Autenticação</h1>
         </div>
         <div className="form-floating">
-          <Input
+          <Input            
             label="Usuário"
             className="form-control"
             type="text"
@@ -105,7 +106,7 @@ export function LoginPage() {
           disabled={pendingApiCall || disableSubmit}
           text="Autenticar"
           pendingApiCall={pendingApiCall}
-        />
+        />        
         <div className="text-center">
           Não possui cadastro?{" "}
           <Link className="nav-link" to="/signup">

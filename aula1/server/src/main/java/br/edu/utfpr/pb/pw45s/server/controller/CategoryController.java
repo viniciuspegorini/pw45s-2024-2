@@ -9,10 +9,10 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import jdk.jfr.ContentType;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping("categories")
@@ -38,20 +38,15 @@ public class CategoryController extends CrudController<Category, CategoryDto, Lo
         return this.modelMapper;
     }
 
-
-    @Operation(summary = "Get a category by its ID")
-    @ApiResponses(
-        value = {
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "Found the category",
-                   content = {
-                            @Content(mediaType = "application/json",
-                           schema = @Schema(implementation = Category.class))
-                    }
-            )
-        }
-    )
+    @Operation(summary = "Get a category by its id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found the category",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = Category.class)) }),
+            @ApiResponse(responseCode = "400", description = "Invalid id supplied",
+                    content = @Content),
+            @ApiResponse(responseCode = "404", description = "Category not found",
+                    content = @Content) })
     @Override
     public ResponseEntity<CategoryDto> findOne(Long aLong) {
         return super.findOne(aLong);

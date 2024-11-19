@@ -4,18 +4,12 @@ import jakarta.persistence.EntityManagerFactory;
 import org.flywaydb.core.Flyway;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
-import org.springframework.boot.jdbc.DatabaseDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.jdbc.support.DatabaseStartupValidator;
-import org.springframework.lang.NonNull;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
 import java.util.stream.Stream;
-
 
 @Configuration
 public class WebConfig {
@@ -26,32 +20,18 @@ public class WebConfig {
     }
 
     @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(@NonNull CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins("*")
-                        .allowedMethods("GET","POST","PUT","PATCH","OPTIONS","DELETE")
-                        .allowedHeaders("Authorization","x-xsrf-token",
-                                "Access-Control-Allow-Headers", "Origin",
-                                "Accept", "X-Requested-With", "Content-Type",
-                                "Access-Control-Request-Method",
-                                "Access-Control-Request-Headers", "Auth-Id-Token");
-            }
-        };
-    }
-
-    @Bean
-    public BeanFactoryPostProcessor beanFactoryPostProcessor() {
-        return beanFactory -> {
-          String[] flyWay = beanFactory.getBeanNamesForType(Flyway.class);
-            Stream.of(flyWay)
-                    .map(beanFactory::getBeanDefinition)
+    public static BeanFactoryPostProcessor dependsOnPostProcessor() {
+        return bf -> {
+            // Let beans that need the database depend on the DatabaseStartupValidator
+            // like the JPA EntityManagerFactory or Flyway
+            String[] flyway = bf.getBeanNamesForType(Flyway.class);
+            Stream.of(flyway)
+                    .map(bf::getBeanDefinition)
                     .forEach(it -> it.setDependsOn("databaseStartupValidator"));
-            String[] jpa = beanFactory.getBeanNamesForType(EntityManagerFactory.class);
+
+            String[] jpa = bf.getBeanNamesForType(EntityManagerFactory.class);
             Stream.of(jpa)
-                    .map(beanFactory::getBeanDefinition)
+                    .map(bf::getBeanDefinition)
                     .forEach(it -> it.setDependsOn("databaseStartupValidator"));
         };
     }
@@ -66,4 +46,5 @@ public class WebConfig {
         dsv.afterPropertiesSet();
         return dsv;
     }
+
 }

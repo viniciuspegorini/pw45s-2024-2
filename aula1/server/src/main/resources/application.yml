@@ -16,11 +16,11 @@ spring:
       hibernate:
         format_sql: false
     show-sql: true
+  flyway:
+    baseline-on-migrate: true
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-  flyway:
-    baseline-on-migrate: true
 ---
 spring:
   config:
@@ -58,3 +58,4 @@ spring:
       ddl-auto: create-drop
   flyway:
     locations: classpath:/db/test
+

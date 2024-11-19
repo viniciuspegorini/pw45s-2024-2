@@ -12,7 +12,7 @@ O Spring Boot 3.x [1] necessita a versão 2 da biblioteca springdoc-openapi [3].
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.3.0</version>
+			<version>2.1.0</version>
 		</dependency>
 	</dependencies>
 <!--... -->
@@ -71,10 +71,10 @@ Esse exemplo utiliza um projeto SpringBoot utilizando o Maven para gerenciamento
 Na sequência será realizada a configuração na classe principal da aplicação **ServerApplication**.
 
 ```java
-//...
+\\...
 @SpringBootApplication
 public  class  ServerApplication {
-	//...
+	\\...
 	@Bean
 	public  static  BeanFactoryPostProcessor  dependsOnPostProcessor() {
 		return bf -> {
