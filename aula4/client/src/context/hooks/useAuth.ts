@@ -1,37 +1,45 @@
-// Criar dentro de src a pasta context > hooks > useAuth.ts
-
-import { useState } from "react";
-import { AuthenticatedUser, AuthenticationResponse } from "../../commons/types";
+import { useState, useEffect } from "react";
 import { api } from "../../lib/axios";
+import { AuthenticatedUser, AuthenticationResponse, UserLogin } from "../../commons/types";
 
 export function useAuth() {
-    const [authenticated, setAuthenticated] = useState(false);
-    const [authenticatedUser, setAuthenticatedUser] = useState<AuthenticatedUser>();
-    const [loading, setLoading] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticatedUser, setAuthenticatedUser] = useState<AuthenticatedUser>();
+  const [loading, setLoading] = useState(true);
 
-    function handleLogin(response: AuthenticationResponse) {
-        localStorage.setItem("token", response.token);
-        localStorage.setItem("user", JSON.stringify(response.user));
-
-        api.defaults.headers.common["Authorization"] = `Bearer ${response.token}`;
-        setAuthenticatedUser(response.user);
-        setAuthenticated(true);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      api.defaults.headers.common["Authorization"] = `Bearer ${JSON.parse(
+        token
+      )}`;
+      setAuthenticated(true);
     }
+    setLoading(false);
+  }, []);
+  
+  function handleLogout() {
+    setAuthenticated(false);
+    localStorage.removeItem("token");
+    api.defaults.headers.common["Authorization"] = "";
+    setAuthenticatedUser(undefined);
+  }
 
-    function handleLogout() {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-        setAuthenticatedUser(undefined);
-        setAuthenticated(false);
+  function handleLogin(response: AuthenticationResponse) {
+    localStorage.setItem("token", JSON.stringify(response.token));
+      api.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${response.token}`;
+      
+      setAuthenticatedUser(response.user);
+      setAuthenticated(true);
+  }
 
-        api.defaults.headers.common["Authorization"] = "";	
-    }
-
-    return {
-        authenticated,
-        authenticatedUser,
-        loading,
-        handleLogin,
-        handleLogout
-    }
+  return {
+    authenticated,
+    authenticatedUser,
+    loading,
+    handleLogin,
+    handleLogout,
+  };
 }

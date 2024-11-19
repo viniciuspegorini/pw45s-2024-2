@@ -4,6 +4,7 @@ import { UserLogin } from "../../commons/types";
 import { ButtonWithProgress } from "../../components/ButtonWithProgress";
 import { Input } from "../../components/Input";
 import { AuthContext } from "../../context/AuthContext";
+import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import googleLogo from "../../assets/google-logo.png";
 import "./style.css";
 

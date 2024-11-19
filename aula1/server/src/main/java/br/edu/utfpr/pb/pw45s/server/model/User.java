@@ -13,6 +13,7 @@ import jakarta.validation.constraints.*;
 import java.util.Collection;
 
 @Entity(name = "tb_user")
+// @Table(uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor

@@ -24,3 +24,4 @@ insert into tb_user_authorities (user_id, authority_id) values (1, 1);
 insert into tb_user_authorities (user_id, authority_id) values (2, 2);
 insert into tb_user_authorities (user_id, authority_id) values (3, 1);
 insert into tb_user_authorities (user_id, authority_id) values (3, 2);
+

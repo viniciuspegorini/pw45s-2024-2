@@ -1,45 +1,95 @@
-2024-10-14T19:54:21.555-03:00  INFO 32988 --- [restartedMain] b.e.u.pb.pw26s.server.ServerApplication  : Starting ServerApplication using Java 17 with PID 32988 (D:\dev\utfpr\aulas\pw26s-pw45s-2024-2\aula2\server\target\classes started by vinic in D:\dev\utfpr\aulas\pw26s-pw45s-2024-2\aula2\server)
-2024-10-14T19:54:21.557-03:00  INFO 32988 --- [restartedMain] b.e.u.pb.pw26s.server.ServerApplication  : The following 1 profile is active: "dev"
-2024-10-14T19:54:21.601-03:00  INFO 32988 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-10-14T19:54:21.602-03:00  INFO 32988 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-10-14T19:54:22.647-03:00  INFO 32988 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-10-14T19:54:22.708-03:00  INFO 32988 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
-2024-10-14T19:54:23.280-03:00  INFO 32988 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-10-14T19:54:23.288-03:00  INFO 32988 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-10-14T19:54:23.289-03:00  INFO 32988 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
-2024-10-14T19:54:23.366-03:00  INFO 32988 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-10-14T19:54:23.367-03:00  INFO 32988 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1760 ms
-2024-10-14T19:54:23.476-03:00  INFO 32988 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-10-14T19:54:23.640-03:00  INFO 32988 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:pw26s-dev user=SA
-2024-10-14T19:54:23.642-03:00  INFO 32988 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-10-14T19:54:23.652-03:00  INFO 32988 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:pw26s-dev'
-2024-10-14T19:54:23.789-03:00  INFO 32988 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.16.3 by Redgate
-2024-10-14T19:54:23.789-03:00  INFO 32988 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
-2024-10-14T19:54:23.789-03:00  INFO 32988 --- [restartedMain] o.f.c.internal.license.VersionPrinter    : 
-2024-10-14T19:54:23.801-03:00  INFO 32988 --- [restartedMain] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:h2:mem:pw26s-dev (H2 2.1)
-2024-10-14T19:54:23.848-03:00  INFO 32988 --- [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2024-10-14T19:54:23.850-03:00  INFO 32988 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
-2024-10-14T19:54:23.855-03:00  INFO 32988 --- [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2024-10-14T19:54:23.879-03:00  INFO 32988 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
-2024-10-14T19:54:23.884-03:00  INFO 32988 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1.0 - Init"
-2024-10-14T19:54:23.904-03:00  INFO 32988 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1.1 - Data"
-2024-10-14T19:54:23.911-03:00  INFO 32988 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC", now at version v1.1 (execution time 00:00.033s)
-2024-10-14T19:54:23.969-03:00  INFO 32988 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-10-14T19:54:24.010-03:00  INFO 32988 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
-2024-10-14T19:54:24.012-03:00  INFO 32988 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-10-14T19:54:24.016-03:00  WARN 32988 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
-2024-10-14T19:54:24.122-03:00  INFO 32988 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-10-14T19:54:24.232-03:00  INFO 32988 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-10-14T19:54:24.467-03:00  INFO 32988 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2024-10-14T19:54:25.154-03:00  INFO 32988 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2024-10-14T19:54:25.156-03:00  INFO 32988 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-10-14T19:54:25.654-03:00  INFO 32988 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2024-10-14T19:54:25.793-03:00  WARN 32988 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-10-14T19:54:25.905-03:00  INFO 32988 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c3a0b8f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65acad89, org.springframework.security.web.context.SecurityContextHolderFilter@26db112d, org.springframework.security.web.header.HeaderWriterFilter@143b80ab, org.springframework.security.web.authentication.logout.LogoutFilter@e8e9129, br.edu.utfpr.pb.pw26s.server.security.JWTAuthenticationFilter@5b26628f, br.edu.utfpr.pb.pw26s.server.security.JWTAuthorizationFilter@10603f8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ac04664, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e9782d0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d3c1624, org.springframework.security.web.session.SessionManagementFilter@5e73fbf7, org.springframework.security.web.access.ExceptionTranslationFilter@3b5f66bd, org.springframework.security.web.access.intercept.AuthorizationFilter@21f900c9]
-2024-10-14T19:54:26.352-03:00  INFO 32988 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-10-14T19:54:26.434-03:00  INFO 32988 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-10-14T19:54:26.461-03:00  INFO 32988 --- [restartedMain] b.e.u.pb.pw26s.server.ServerApplication  : Started ServerApplication in 5.373 seconds (process running for 6.207)
-2024-10-14T19:54:26.637-03:00  INFO 32988 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Application registered itself as 9390655744bc
-2024-10-14T19:54:26.696-03:00  INFO 32988 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-10-14T19:54:26.697-03:00  INFO 32988 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-10-14T19:54:26.701-03:00  INFO 32988 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-11-18T16:40:21.160-03:00  INFO 29656 --- [restartedMain] b.e.u.pb.pw45s.server.ServerApplication  : Starting ServerApplication using Java 21.0.2 with PID 29656 (D:\dev\utfpr\aulas\pw26s-pw45s\aula2\server\target\classes started by vinic in D:\dev\utfpr\aulas\pw26s-pw45s\aula2\server)
+2024-11-18T16:40:21.162-03:00  INFO 29656 --- [restartedMain] b.e.u.pb.pw45s.server.ServerApplication  : The following 1 profile is active: "dev"
+2024-11-18T16:40:21.213-03:00  INFO 29656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-18T16:40:21.213-03:00  INFO 29656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-18T16:40:22.371-03:00  INFO 29656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-18T16:40:22.430-03:00  INFO 29656 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
+2024-11-18T16:40:23.237-03:00  INFO 29656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-18T16:40:23.248-03:00  INFO 29656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-18T16:40:23.249-03:00  INFO 29656 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-18T16:40:23.307-03:00  INFO 29656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-18T16:40:23.307-03:00  INFO 29656 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2093 ms
+2024-11-18T16:40:23.435-03:00  INFO 29656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-18T16:40:23.599-03:00  INFO 29656 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:pw26s-dev user=SA
+2024-11-18T16:40:23.600-03:00  INFO 29656 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-18T16:40:23.609-03:00  INFO 29656 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:pw26s-dev'
+2024-11-18T16:40:23.905-03:00  INFO 29656 --- [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:pw26s-dev (H2 2.2)
+2024-11-18T16:40:23.911-03:00  WARN 29656 --- [restartedMain] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024-11-18T16:40:23.933-03:00  INFO 29656 --- [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2024-11-18T16:40:23.936-03:00  INFO 29656 --- [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.013s)
+2024-11-18T16:40:23.942-03:00  INFO 29656 --- [restartedMain] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2024-11-18T16:40:23.974-03:00  INFO 29656 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2024-11-18T16:40:23.980-03:00  INFO 29656 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1.0 - Init"
+2024-11-18T16:40:23.999-03:00  INFO 29656 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1.1 - Data"
+2024-11-18T16:40:24.010-03:00  INFO 29656 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC", now at version v1.1 (execution time 00:00.014s)
+2024-11-18T16:40:24.099-03:00  INFO 29656 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-18T16:40:24.152-03:00  INFO 29656 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-18T16:40:24.160-03:00  WARN 29656 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+2024-11-18T16:40:24.189-03:00  INFO 29656 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-18T16:40:24.449-03:00  INFO 29656 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-18T16:40:25.303-03:00  INFO 29656 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-18T16:40:25.306-03:00  INFO 29656 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-18T16:40:25.860-03:00  WARN 29656 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-18T16:40:25.902-03:00  INFO 29656 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authService
+2024-11-18T16:40:26.387-03:00  INFO 29656 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-11-18T16:40:27.016-03:00  INFO 29656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-11-18T16:40:27.080-03:00  INFO 29656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-18T16:40:27.093-03:00  INFO 29656 --- [restartedMain] b.e.u.pb.pw45s.server.ServerApplication  : Started ServerApplication in 6.457 seconds (process running for 7.439)
+2024-11-18T16:40:27.143-03:00  WARN 29656 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=spring-boot-application, managementUrl=http://192.168.56.1:8080/actuator, healthUrl=http://192.168.56.1:8080/actuator/health, serviceUrl=http://192.168.56.1:8080/) at spring-boot-admin ([http://127.0.0.1:8081/instances]): I/O error on POST request for "http://127.0.0.1:8081/instances": Connection refused: getsockopt. Further attempts are logged on DEBUG level
+2024-11-18T16:40:27.461-03:00  INFO 29656 --- [RMI TCP Connection(2)-192.168.56.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-18T16:40:27.461-03:00  INFO 29656 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-18T16:40:27.463-03:00  INFO 29656 --- [RMI TCP Connection(2)-192.168.56.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-11-18T16:40:36.952-03:00  INFO 29656 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-18T16:40:36.958-03:00  WARN 29656 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-11-18T16:40:36.959-03:00  INFO 29656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-18T16:40:36.962-03:00  INFO 29656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-18T16:51:26.049-03:00  INFO 29564 --- [main] b.e.u.p.pw45s.server.UserControllerTest  : Starting UserControllerTest using Java 21.0.2 with PID 29564 (started by vinic in D:\dev\utfpr\aulas\pw26s-pw45s\aula2\server)
+2024-11-18T16:51:26.050-03:00  INFO 29564 --- [main] b.e.u.p.pw45s.server.UserControllerTest  : The following 1 profile is active: "test"
+2024-11-18T16:51:27.859-03:00  INFO 29564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-18T16:51:27.952-03:00  INFO 29564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
+2024-11-18T16:51:29.236-03:00  INFO 29564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-11-18T16:51:29.255-03:00  INFO 29564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-18T16:51:29.256-03:00  INFO 29564 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-18T16:51:29.379-03:00  INFO 29564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-18T16:51:29.380-03:00  INFO 29564 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3302 ms
+2024-11-18T16:51:29.616-03:00  INFO 29564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-18T16:51:29.902-03:00  INFO 29564 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-11-18T16:51:29.905-03:00  INFO 29564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-18T16:51:29.920-03:00  INFO 29564 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-11-18T16:51:30.410-03:00  INFO 29564 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.2)
+2024-11-18T16:51:30.417-03:00  WARN 29564 --- [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024-11-18T16:51:30.444-03:00  INFO 29564 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2024-11-18T16:51:30.448-03:00  INFO 29564 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.017s)
+2024-11-18T16:51:30.458-03:00  INFO 29564 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2024-11-18T16:51:30.507-03:00  INFO 29564 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2024-11-18T16:51:30.515-03:00  INFO 29564 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1.0 - Init"
+2024-11-18T16:51:30.556-03:00  INFO 29564 --- [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC", now at version v1.0 (execution time 00:00.024s)
+2024-11-18T16:51:30.727-03:00  INFO 29564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-18T16:51:30.824-03:00  INFO 29564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-18T16:51:30.834-03:00  WARN 29564 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.validation.mode], use [jakarta.persistence.validation.mode] instead
+2024-11-18T16:51:30.895-03:00  INFO 29564 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-18T16:51:31.441-03:00  INFO 29564 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-18T16:51:33.064-03:00  INFO 29564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-18T16:51:33.103-03:00  INFO 29564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-18T16:51:34.124-03:00  WARN 29564 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-18T16:51:34.187-03:00  INFO 29564 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name authService
+2024-11-18T16:51:35.049-03:00  INFO 29564 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoints beneath base path '/actuator'
+2024-11-18T16:51:36.169-03:00  INFO 29564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 51042 (http) with context path '/'
+2024-11-18T16:51:36.194-03:00  INFO 29564 --- [main] b.e.u.p.pw45s.server.UserControllerTest  : Started UserControllerTest in 10.761 seconds (process running for 12.788)
+2024-11-18T16:51:36.269-03:00  WARN 29564 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=spring-boot-application, managementUrl=http://192.168.56.1:51042/actuator, healthUrl=http://192.168.56.1:51042/actuator/health, serviceUrl=http://192.168.56.1:51042/) at spring-boot-admin ([http://127.0.0.1:8081/instances]): I/O error on POST request for "http://127.0.0.1:8081/instances": Connection refused: getsockopt. Further attempts are logged on DEBUG level
+2024-11-18T16:51:37.187-03:00  INFO 29564 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-18T16:51:37.188-03:00  INFO 29564 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-18T16:51:37.190-03:00  INFO 29564 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-11-18T16:51:37.388-03:00  INFO 29564 --- [http-nio-auto-1-exec-1] b.e.u.p.p.s.controller.UserController    : Creating new user with username: test-user
+2024-11-18T16:51:37.547-03:00  INFO 29564 --- [http-nio-auto-1-exec-1] b.e.u.p.p.s.controller.UserController    : New user created with id: 1
+2024-11-18T16:51:38.056-03:00  INFO 29564 --- [http-nio-auto-1-exec-2] b.e.u.p.p.s.controller.UserController    : Creating new user with username: test-user
+2024-11-18T16:51:38.133-03:00  INFO 29564 --- [http-nio-auto-1-exec-2] b.e.u.p.p.s.controller.UserController    : New user created with id: 2
+2024-11-18T16:51:38.165-03:00  INFO 29564 --- [http-nio-auto-1-exec-3] b.e.u.p.p.s.controller.UserController    : Creating new user with username: test-user
+2024-11-18T16:51:38.253-03:00  INFO 29564 --- [http-nio-auto-1-exec-3] b.e.u.p.p.s.controller.UserController    : New user created with id: 3
+2024-11-18T16:51:38.441-03:00  INFO 29564 --- [http-nio-auto-1-exec-8] b.e.u.p.p.s.controller.UserController    : Creating new user with username: test-user
+2024-11-18T16:51:38.540-03:00  INFO 29564 --- [http-nio-auto-1-exec-8] b.e.u.p.p.s.controller.UserController    : New user created with id: 4
+2024-11-18T16:51:38.563-03:00  INFO 29564 --- [http-nio-auto-1-exec-9] b.e.u.p.p.s.controller.UserController    : Creating new user with username: test-user
+2024-11-18T16:51:38.658-03:00  INFO 29564 --- [http-nio-auto-1-exec-9] b.e.u.p.p.s.controller.UserController    : New user created with id: 5
+2024-11-18T16:51:38.820-03:00  INFO 29564 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-18T16:51:38.831-03:00  INFO 29564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-18T16:51:38.837-03:00  INFO 29564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
