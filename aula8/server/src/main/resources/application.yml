@@ -1,3 +1,4 @@
+
 spring:
   profiles:
     active: dev
@@ -47,7 +48,8 @@ minio:
   bucket-name: commons # Bucket Name
   image-size: 10485760 #  Maximum size of picture file
   file-size: 104857600 #  Maximum file size
-
+server:
+  port: ${SERVER_PORT:8080}
 ---
 spring:
   config:
@@ -70,6 +72,20 @@ spring:
       on-profile: dev
   datasource:
     url: jdbc:h2:mem:pw26s-dev
+  jpa:
+    hibernate:
+      ddl-auto: none
+  flyway:
+    locations: classpath:/db/dev
+---
+spring:
+  config:
+    activate:
+      on-profile: dev-postgres
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: none
