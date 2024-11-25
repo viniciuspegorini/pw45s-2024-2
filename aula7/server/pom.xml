@@ -8,11 +8,11 @@
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.edu.utfpr.pb.pw45s</groupId>
+	<groupId>br.edu.utfpr.pb.pw26s</groupId>
 	<artifactId>server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>server</name>
-	<description>Aula da Disciplina PW45S</description>
+	<description>Aula da Disciplina PW26S</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
@@ -112,28 +112,11 @@
 			<version>1.34.1</version>
 		</dependency>
 
-		<!-- File Storage com MINIO -->
+		<!-- Upload -->
 		<dependency>
-			<groupId>io.minio</groupId>
-			<artifactId>minio</artifactId>
-			<version>8.5.13</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>cn.hutool</groupId>
-			<artifactId>hutool-all</artifactId>
-			<version>5.8.22</version>
-		</dependency>
-
-		<dependency>
-			<groupId>me.paulschwarz</groupId>
-			<artifactId>spring-dotenv</artifactId>
-			<version>3.0.0</version>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.14.0</version>
 		</dependency>
 	</dependencies>
 
