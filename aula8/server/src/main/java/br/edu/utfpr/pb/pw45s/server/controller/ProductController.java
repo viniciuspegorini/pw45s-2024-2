@@ -35,7 +35,8 @@ public class ProductController extends CrudController<Product, ProductDto, Long>
         return this.modelMapper;
     }
 
-    @PostMapping(value = "upload", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.APPLICATION_OCTET_STREAM_VALUE})
+    @PostMapping(value = "upload", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE,
+                                            MediaType.APPLICATION_OCTET_STREAM_VALUE})
     public Product saveProduct(@RequestPart("product") @Valid Product entity,
                                @RequestPart("image") @Valid MultipartFile file) {
         return productService.save(entity, file);
